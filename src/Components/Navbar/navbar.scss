@@ -1,0 +1,32 @@
+.navbar {
+    width: 100%;
+  color: white;
+  font-size: 18px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  // background-color: #ccb4b4;
+  // background-color: #ccb4b4;
+  
+
+  .navbar-brand{
+    margin: 0px 30px;
+    font-size: 23px;
+  }
+
+  .nav-link{
+    color: black;
+  }
+
+  .icon{
+    color: black;
+    cursor: pointer;
+
+    &:hover{
+color: saddlebrown;
+    }
+  }
+
+
+}
+
