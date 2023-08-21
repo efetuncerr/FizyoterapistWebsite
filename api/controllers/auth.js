@@ -26,27 +26,7 @@ export const register = (req, res) => {
   });
 };
 
-//Randevu ekleme
-export const addPost = (req,res) => {
 
-    //CHECK EXISTING Randevu
-    const q = "SELECT * FROM users WHERE email = ? OR username = ?";
-
-    db.query(q, [req.body.email, req.body.username], (err, data) => {
-      if (err) return res.json(err);
-      if (data.length) return res.status(409).json("Kayıtlı randevu var");
-  
-  
-      const q = "INSERT INTO users(`username`,`surname`,`email`,`password`,`phone`) VALUES (?)";
-      const values = [req.body.username,req.body.surname, req.body.email, req.body.phone];
-  
-      db.query(q, [values], (err, data) => {
-        if (err) return res.json(err);
-        return res.status(200).json("User has been created.");
-      });
-    });
-  
-}
 
 export const login = (req, res) => {
 
