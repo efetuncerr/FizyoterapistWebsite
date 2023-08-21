@@ -48,7 +48,7 @@ const Content = () => {
      
         <div className="row d-flex justify-content-center align-items-center">
             
-          <div className="col-4">
+          <div className="col col-sm-12  col-lg-4">
             
             <div class="card text-center h-50 ms-5 border-0">
             
@@ -66,7 +66,7 @@ const Content = () => {
               </div>
             </div>
           </div>
-          <div className="col-4">
+          <div className="col col-sm-12  col-lg-4">
             <div class="card text-center h-50  ms-5 border-0">
              
               <div class="card-body border border-0">
@@ -83,7 +83,7 @@ const Content = () => {
               </div>
             </div>
           </div>
-          <div className="col-4">
+          <div className="col col-sm-12 col-lg-4">
             <div class="card text-center h-50  ms-5 border-0">
             
               <div class="card-body border border-0">

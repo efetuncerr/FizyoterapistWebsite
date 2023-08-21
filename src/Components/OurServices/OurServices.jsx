@@ -29,7 +29,7 @@ const OurServices = () => {
               <a href="/" class="btn ">
                 Daha fazla
               </a>
-              <a href="/" class="btnMain">
+              <a href="/approintment" class="btnMain">
                 Randevu al
               </a>
             </div>
@@ -56,7 +56,7 @@ const OurServices = () => {
               <a href="/" class="btn ">
                 Daha fazla
               </a>
-              <a href="/" class="btnMain" >
+              <a href="/approintment" class="btnMain" >
                 Randevu al
               </a>
             </div>
@@ -83,7 +83,7 @@ const OurServices = () => {
               <a href="/" class="btn ">
                 Daha fazla
               </a>
-              <a href="/" class="btnMain">
+              <a href="/approintment" class="btnMain">
                 Randevu al
               </a>
             </div>
@@ -112,7 +112,7 @@ const OurServices = () => {
               <a href="/" class="btn ">
                 Daha fazla
               </a>
-              <a href="/" class="btnMain">
+              <a href="/approintment" class="btnMain">
                 Randevu al
               </a>
             </div>
@@ -138,7 +138,7 @@ const OurServices = () => {
               <a href="/" class="btn ">
                 Daha fazla
               </a>
-              <a href="/" class="btnMain">
+              <a href="/approintment" class="btnMain">
                 Randevu al
               </a>
             </div>
@@ -164,7 +164,7 @@ const OurServices = () => {
               <a href="/" class="btn ">
                 Daha fazla
               </a>
-              <a href="/" class="btnMain">
+              <a href="/approintment" class="btnMain">
                 Randevu al
               </a>
             </div>
