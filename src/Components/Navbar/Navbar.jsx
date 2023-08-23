@@ -63,8 +63,8 @@ const Navbarr = () => {
             {/* <a href="/login" class="btn" >
              Giriş yap
             </a> */}
-            <a href="/register" class="btn btnMain">
-             Kayıt ol
+            <a href="/register" class={currentUser ? "d-none" : "btn btnMain"}>
+             Kayıt ol 
             </a>
           </div>
         </div>

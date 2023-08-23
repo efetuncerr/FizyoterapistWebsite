@@ -1,52 +1,54 @@
-import axios from 'axios';
-import React, { useContext, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../context/authContext';
+import axios from "axios";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 import { toast } from "react-toastify";
+
 const Login = () => {
+  const [inputs, setInputs] = useState({
+    username: "",
+    password: "",
+  });
 
-    const [inputs, setInputs] = useState({
-        username: "",
-        password: "",
+  const [err, setError] = useState(null);
+
+  const { login } = useContext(AuthContext);
+
+  
+  const navigate = useNavigate();
+
+
+
+  const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    console.log(inputs);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await login(inputs);
+      toast.success("Başarılı, yönlendiriliyorsunuz", {
+        position: "top-right",
+        autoClose: 1300,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
       });
-      
-      const [err,setError] = useState(null);
-    
-      const navigate = useNavigate()
 
-      const {login} =useContext(AuthContext);
-    
-      const handleChange = (e) => {
-        setInputs((prev) => ({...prev, [e.target.name]: e.target.value }));
-        console.log(inputs)
-      };
-      
-      const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await login(inputs);
-            toast.success('Başarılı, yönlendiriliyorsunuz', {
-              position: "top-right",
-              autoClose: 1300,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: false,
-              progress: undefined,
-              theme: "light",
-              });
-      
-            setTimeout(() => {
-              navigate("/");
-            }, 2000);
-          } catch (err) {
-            toast.error("Hatalı kullanıcı adı veya şifre girdiniz");
-            setError(err.response.data);
-          }
-      };
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    } catch (err) {
+      toast.error("Hatalı kullanıcı adı veya şifre girdiniz");
+      setError(err.response.data);
+    }
+  };
   return (
-
-<div className="container-fluid loginForm">
+    <div className="container-fluid loginForm">
       <div className="row ">
         <div className="col-12">
           <div
@@ -55,7 +57,7 @@ const Login = () => {
           >
             <div className="card-body p-5 d-flex flex-column align-items-center mx-auto w-100">
               <h2 className="fw-bold mb-5">Giriş Yap</h2>
-              {err && <p style={{color:"red"}}>{err}</p>}
+              {err && <p style={{ color: "red" }}>{err}</p>}
 
               <input
                 type="text"
@@ -65,9 +67,7 @@ const Login = () => {
                 name="username"
                 onChange={handleChange}
               />
-           
 
-          
               <input
                 type="password"
                 className="mb-4 mx-5 w-100 "
@@ -76,20 +76,18 @@ const Login = () => {
                 name="password"
                 onChange={handleChange}
               />
-             
+
               <p className="small mb-3 pb-lg-2">
                 <a className="text-white-50" href="#!">
                   Şifrenizi mi unuttunuz?
                 </a>
               </p>
               <button
-              
                 onClick={handleSubmit}
                 className="btn btn-outlined btn-light mx-2 px-5"
               >
                 Giriş yap
               </button>
-             
 
               <div className="d-flex flex-row mt-3 mb-5">
                 <p className="pb-5">
@@ -104,7 +102,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

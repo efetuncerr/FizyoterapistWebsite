@@ -6,21 +6,25 @@ import Approintment from "./pages/Appointment/Appointment";
 import Posts from "./pages/Posts/Posts";
 
 
+
+
 function App() {
   return (
     <div>
- 
- <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/register" element={<Register/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/approintment" element={<Approintment/>}/>
-      <Route path="/posts" element={<Posts/>}/>
-      
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
 
-      
-    </Routes>
 
+          {/* Public Routes */}
+          <Route path="/login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+
+
+           {/* Private Routes  */}
+          <Route path="/admin" element={<Posts />}  />
+          <Route path="/approintment" element={<Approintment />} />
+          <Route path="*" element={<div>Page not found</div>} />
+      </Routes>
     </div>
   );
 }
