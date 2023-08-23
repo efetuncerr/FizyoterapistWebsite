@@ -1,7 +1,13 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { Navigate, Outlet } from "react-router-dom";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
+
+// export const AuthContextProvider = ({ children }) => {
+//   const [currentUser, setCurrentUser] = useState(
+//     JSON.parse(localStorage.getItem("user") || null)
+//   );
 
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
@@ -16,6 +22,7 @@ export const AuthContextProvider = ({ children }) => {
   const logout = async (inputs) => {
     await axios.post("/auth/logout");
     setCurrentUser(null);
+   
   };
 
   useEffect(() => {
@@ -28,3 +35,8 @@ export const AuthContextProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+export const useAuth = () => {
+  return useContext(AuthContext)
+}
+

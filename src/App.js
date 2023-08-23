@@ -4,13 +4,15 @@ import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Approintment from "./pages/Appointment/Appointment";
 import Posts from "./pages/Posts/Posts";
+import { AuthContextProvider } from "./context/authContext";
+import RequireAuth from "./Components/RequireAuth/RequireAuth";
 
 
 
 
 function App() {
   return (
-    <div>
+    <AuthContextProvider>
       <Routes>
         <Route path="/" element={<Home />}></Route>
 
@@ -21,11 +23,11 @@ function App() {
 
 
            {/* Private Routes  */}
-          <Route path="/admin" element={<Posts />}  />
-          <Route path="/approintment" element={<Approintment />} />
+          <Route path="/admin" element={<RequireAuth><Posts /></RequireAuth>}  />
+          <Route path="/approintment" element={<RequireAuth><Approintment /></RequireAuth>} />
           <Route path="*" element={<div>Page not found</div>} />
       </Routes>
-    </div>
+    </AuthContextProvider>
   );
 }
 

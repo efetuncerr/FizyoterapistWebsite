@@ -1,6 +1,7 @@
 import { db } from "../db.js";
 import bcrypt from "bcryptjs";
 import  jwt  from "jsonwebtoken";
+import { Navigate } from "react-router-dom";
 
 
 
@@ -57,7 +58,6 @@ db.query(q, [req.body.username], (err,data) => {
 export const logout = (req, res) => {
 
 
-  
   res.clearCookie("access_token",{
     sameSite:true,
     secure:true

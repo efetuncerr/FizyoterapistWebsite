@@ -1,14 +1,16 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/authContext";
+import { AuthContext, useAuth } from "../../context/authContext";
 import { toast } from "react-toastify";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const Login = () => {
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
   });
+  const auth = useAuth()
 
   const [err, setError] = useState(null);
 
@@ -25,10 +27,11 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
+     auth.login(inputs)
     e.preventDefault();
     try {
       await login(inputs);
-      toast.success("Başarılı, yönlendiriliyorsunuz", {
+      toast.success("Giriş Başarılı, yönlendiriliyorsunuz", {
         position: "top-right",
         autoClose: 1300,
         hideProgressBar: false,
@@ -48,11 +51,14 @@ const Login = () => {
     }
   };
   return (
-    <div className="container-fluid loginForm">
+    <div>
+      <Navbar/>
+    <div className="container-fluid loginForm ">
+     
       <div className="row ">
-        <div className="col-12">
+        <div className="col-12 mb-5">
           <div
-            className="card bg-dark text-white my-5 mx-auto"
+            className="card bg-dark text-white mx-auto"
             style={{ borderRadius: "1rem", maxWidth: "400px" }}
           >
             <div className="card-body p-5 d-flex flex-column align-items-center mx-auto w-100">
@@ -63,7 +69,7 @@ const Login = () => {
                 type="text"
                 className="mb-4 mx-5 w-100 "
                 id="formControl"
-                placeholder="Adınız"
+                placeholder="kullanıcı adı"
                 name="username"
                 onChange={handleChange}
               />
@@ -72,7 +78,7 @@ const Login = () => {
                 type="password"
                 className="mb-4 mx-5 w-100 "
                 id="formControl"
-                placeholder="şifrenizi giriniz"
+                placeholder="şifre"
                 name="password"
                 onChange={handleChange}
               />
@@ -101,6 +107,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 // import PhoneInput from "react-phone-input-2";
 // import "react-phone-input-2/lib/style.css";
 import { toast } from "react-toastify";
+import Navbar from "../../Components/Navbar/Navbar";
+
 
 const Register = () => {
   const [inputs, setInputs] = useState({
@@ -51,11 +53,13 @@ const Register = () => {
 
   
   return (
+    <div>
+      <Navbar/>
     <div className="container-fluid loginForm">
       <div className="row ">
         <div className="col-12">
           <div
-            className="card bg-dark text-white my-5 mx-auto"
+            className="card bg-dark text-white  mx-auto"
             style={{ borderRadius: "1rem", maxWidth: "400px" }}
           >
             <div className="card-body p-5 d-flex flex-column align-items-center mx-auto w-100">
@@ -136,6 +140,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
