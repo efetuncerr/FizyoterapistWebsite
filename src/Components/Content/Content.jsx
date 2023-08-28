@@ -11,10 +11,10 @@ const Content = () => {
       <div className="container-fluid content">
         <div className="row">
           <div className="col">
-            <h2 className="d-flex justify-content-center align-items-center">
+            <h2 className="d-flex justify-content-center align-items-center p-2">
               Zaman kaybetmeyin, Fizyoterapiste danışın !
             </h2>
-            <p class="text-muted d-flex justify-content-center align-items-center ">
+            <p class="text-muted d-flex justify-content-center align-items-center p-2">
               Fizik tedavide ilk 3 ay en iyi sonuç alınan evredir. Tedavinin en
               verimli olduğu zamanı kaybetmek telafi edilemez kayıplara yol
               açabilir. Bizi arayın!
@@ -46,7 +46,7 @@ const Content = () => {
         </h2>
         <hr/>
      
-        <div className="row d-flex justify-content-center align-items-center">
+        <div className="row d-flex justify-content-center align-items-center me-4">
             
           <div className="col col-sm-12  col-lg-4">
             

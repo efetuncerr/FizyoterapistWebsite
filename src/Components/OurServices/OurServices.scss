@@ -14,3 +14,10 @@ border-radius: 3px;
 }
 
 }
+
+.cardService{transition: transform .3s;}
+.cardService:hover{
+  /* transform: translateY(-20px); */
+  
+  transform: scale(1.05);
+}

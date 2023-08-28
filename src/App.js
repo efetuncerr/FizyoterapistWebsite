@@ -5,12 +5,16 @@ import Login from "./pages/Login/Login";
 import Approintment from "./pages/Appointment/Appointment";
 import Posts from "./pages/Posts/Posts";
 import { AuthContextProvider } from "./context/authContext";
-import RequireAuth from "./Components/RequireAuth/RequireAuth";
+import RequireAuth from "./Components/Require/RequireAuth";
+import { useEffect, useState } from "react";
 
 
 
 
 function App() {
+
+  
+
   return (
     <AuthContextProvider>
       <Routes>
@@ -21,9 +25,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="register" element={<Register />} />
 
-
            {/* Private Routes  */}
-          <Route path="/admin" element={<RequireAuth><Posts /></RequireAuth>}  />
+          <Route path="/admin" element={<RequireAuth ><Posts /></RequireAuth>}  />
           <Route path="/approintment" element={<RequireAuth><Approintment /></RequireAuth>} />
           <Route path="*" element={<div>Page not found</div>} />
       </Routes>

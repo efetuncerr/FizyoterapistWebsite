@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext, useAuth } from "../../context/authContext";
 import { toast } from "react-toastify";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -27,6 +27,7 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
+
      auth.login(inputs)
     e.preventDefault();
     try {

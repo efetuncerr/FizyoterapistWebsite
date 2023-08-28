@@ -46,6 +46,7 @@ db.query(q, [req.body.username], (err,data) => {
   const token = jwt.sign({id:data[0].id}, "jwtkey")     //jwtkey yerine random generate key yaz
   const  {password, ...other} = data[0] 
   
+  
 
 
   res.cookie("access_token", token, {

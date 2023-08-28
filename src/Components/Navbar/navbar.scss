@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   z-index: 999;
-  // background-color: #ccb4b4;
+  // background-color:  #ccb4b4;
   // background-color: #ccb4b4;
   
   .btnMain{
@@ -19,7 +19,8 @@
     border-radius: 3px;
     
     &:hover{
-        background-color: #c29f9f;
+        background-color:  #c29f9f;
+        
         
     }
     
@@ -29,11 +30,18 @@
       font-size: 16px;
       cursor: pointer;
       color: #000;
+
+      &:hover{
+        color:#ccb4b4 ;
+      }
       
     }
   .navbar-brand{
     margin: 0px 30px;
     font-size: 23px;
+    &:hover{
+      color:#ccb4b4 ;
+    }
   }
 
   .nav-link{
@@ -45,10 +53,20 @@
     cursor: pointer;
 
     &:hover{
-color: saddlebrown;
+      color:#ccb4b4 ;
     }
   }
 
 
+.navlink{
+  font-size: 20px;
+  font-weight: normal;
+
+  &:hover{
+    color:#ccb4b4 ;
+  }
+}
+  
+.navlink1{}
 }
 
