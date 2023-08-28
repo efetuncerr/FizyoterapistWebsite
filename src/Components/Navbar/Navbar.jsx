@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./navbar.scss";
 import SearchIcon from "@mui/icons-material/Search";
 import { AuthContext } from "../../context/authContext";

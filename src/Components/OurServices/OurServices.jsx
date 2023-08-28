@@ -1,5 +1,6 @@
 import React from "react";
 import "./OurServices.scss";
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 const OurServices = () => {
   return (
@@ -26,12 +27,13 @@ const OurServices = () => {
                 Our membership management software provides full automation of
                 membership renewals and payments
               </p>
-              <a href="/" class="btn ">
-                Daha fazla
-              </a>
               <a href="/approintment" class="btnMain">
                 Randevu al
               </a>
+              <a href="/" class="btn ">
+              Daha fazlası <KeyboardArrowRightIcon style={{color:"#ccb4b4"}}/>
+              </a>
+            
             </div>
           </div>
         </div>
@@ -53,12 +55,13 @@ const OurServices = () => {
                 Our membership management software provides full automation of
                 membership renewals and payments
               </p>
-              <a href="/" class="btn ">
-                Daha fazla
-              </a>
               <a href="/approintment" class="btnMain" >
                 Randevu al
               </a>
+              <a href="/" class="btn ">
+              Daha fazlası <KeyboardArrowRightIcon style={{color:"#ccb4b4"}}/>
+              </a>
+              
             </div>
           </div>
         </div>
@@ -80,12 +83,13 @@ const OurServices = () => {
                 Our membership management software provides full automation of
                 membership renewals and payments
               </p>
-              <a href="/" class="btn ">
-                Daha fazla
-              </a>
               <a href="/approintment" class="btnMain">
                 Randevu al
               </a>
+              <a href="/" class="btn ">
+              Daha fazlası <KeyboardArrowRightIcon style={{color:"#ccb4b4"}}/>
+              </a>
+             
             </div>
           </div>
         </div>
@@ -109,12 +113,13 @@ const OurServices = () => {
                 Our membership management software provides full automation of
                 membership renewals and payments
               </p>
-              <a href="/" class="btn ">
-                Daha fazla
-              </a>
               <a href="/approintment" class="btnMain">
                 Randevu al
               </a>
+              <a href="/" class="btn">
+               Daha fazlası <KeyboardArrowRightIcon style={{color:"#ccb4b4"}}/> 
+              </a>
+            
             </div>
           </div>
         </div>
@@ -135,12 +140,13 @@ const OurServices = () => {
                 Our membership management software provides full automation of
                 membership renewals and payments
               </p>
-              <a href="/" class="btn ">
-                Daha fazla
-              </a>
               <a href="/approintment" class="btnMain">
                 Randevu al
               </a>
+              <a href="/" class="btn ">
+              Daha fazlası <KeyboardArrowRightIcon style={{color:"#ccb4b4"}}/>
+              </a>
+             
             </div>
           </div>
         </div>
@@ -160,13 +166,13 @@ const OurServices = () => {
               >
                 Our membership management software provides full automation of
                 membership renewals and payments
-              </p>
-              <a href="/" class="btn ">
-                Daha fazla
-              </a>
-              <a href="/approintment" class="btnMain">
+              </p> <a href="/approintment" class="btnMain">
                 Randevu al
               </a>
+              <a href="/" className="btn">
+              Daha fazlası <KeyboardArrowRightIcon style={{color:"#ccb4b4"}}/>
+              </a>
+             
             </div>
           </div>
         </div>
