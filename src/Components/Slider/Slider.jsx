@@ -2,8 +2,7 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import styled from "styled-components";
 import { useState } from "react";
-import {sliderItems} from "../../data"
-
+import { sliderItems } from "../../data";
 
 const Container = styled.div`
   width: 100%;
@@ -36,7 +35,7 @@ const Wrapper = styled.div`
   height: 100px;
   display: flex;
   transition: all 1.2s ease;
-  transform: translateX(${props => props.slideIndex * -100}vw);
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -51,6 +50,7 @@ const ImgContainer = styled.div`
   flex: 1;
   margin-left: 2.5rem;
 `;
+
 const Image = styled.img`
   height: 75%;
   margin-top: 40px;
@@ -79,18 +79,13 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-
-
-
 const Slider = () => {
-  
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
-
-    if(direction === "left") {
-        setSlideIndex(slideIndex > 0 ? slideIndex-1 : 2)
-    }else{
-        setSlideIndex( slideIndex<2 ? slideIndex +1 : 0)
+    if (direction === "left") {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
   };
 
@@ -99,26 +94,20 @@ const Slider = () => {
       <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowBackIosNewIcon />
       </Arrow>
-      <Wrapper slideIndex = {slideIndex}>
-        {sliderItems.map(item=>(
-     <Slide bg={item.bg} key={item.id}>
-     <ImgContainer>
-       <Image src={item.img} />
-     </ImgContainer>
-     <InfoContainer>
-       <Title>{item.title}</Title>
-       <Description>
-         {item.desc}
-       </Description>
-       <Button>Bizi Arayın</Button>
-     </InfoContainer>
-   </Slide> 
-   
-   
-        ))}
-      
-   
+      <Wrapper slideIndex={slideIndex}>
+        {sliderItems.map((item) => (
+          <Slide bg={item.bg} key={item.id}>
+            <ImgContainer>
+              <Image src={item.img} />
+            </ImgContainer>
 
+            <InfoContainer>
+              <Title>{item.title}</Title>
+              <Description>{item.desc}</Description>
+              <Button>Bizi Arayın</Button>
+            </InfoContainer>
+          </Slide>
+        ))}
       </Wrapper>
 
       <Arrow direction="right" onClick={() => handleClick("right")}>
